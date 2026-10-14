@@ -8,6 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: unzip -q GeoTools.zip
+      - run: sed -i 's/^import androidx.compose.foundation.layout.\*/import androidx.compose.foundation.isSystemInDarkTheme\nimport androidx.compose.foundation.layout.*/' GeoTools/app/src/main/java/com/geotools/app/MainActivity.kt
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
